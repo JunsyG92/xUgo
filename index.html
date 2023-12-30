@@ -20,6 +20,40 @@
 
     html, body {
       font-family: LilitaOne;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+    }
+
+    .main-image-container {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .main-image {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      object-position: right top;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px; /* Ajuster si nécessaire */
+    }
+
+    .contact-button {
+      margin-right: 20px;
+    }
+
+    @media (max-width: 767px) {
+      .contact-button {
+        margin-top: 15px;
+      }
     }
   </style>
 </head>
@@ -34,7 +68,7 @@
         <br />
 
         <button
-          class="overflow-hidden z-0 relative button uppercase px-5 py-5 rounded-[10px] shadow-[inset_0px_0px_0px_2px_rgba(0,0,0,.6)]"
+          class="contact-button overflow-hidden z-0 relative button uppercase px-5 py-5 rounded-[10px] shadow-[inset_0px_0px_0px_2px_rgba(0,0,0,.6)]"
           onclick="window.scrollTo({
             top: document.body.scrollHeight,
             left: 0,
@@ -45,7 +79,30 @@
             Contactez-nous
           </span>
         </button>
+
+        <button
+          class="overflow-hidden z-0 relative button uppercase px-5 py-5 rounded-[10px] shadow-[inset_0px_0px_0px_2px_rgba(0,0,0,.6)] contact-button"
+          onclick="window.scrollTo({
+            top: document.body.scrollHeight,
+            left: 0,
+            behavior: 'smooth',
+          })"
+        >
+          <span class="z-10 relative font-medium text-gray-800">
+            Télécharger l'affiche
+          </span>
+        </button>
       </header>
+
+      <!-- Ajout de l'image qui prend toute la partie droite de l'écran -->
+      <div class="main-image-container">
+        <img
+          src="./assets//ugo-5.JPEG"
+          alt="Ugo, laika de Iakoutie, chien perdu, liessies"
+          class="main-image hidden md:block"
+        />
+      </div>
+
     </div>
 
     <br />
